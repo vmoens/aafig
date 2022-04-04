@@ -77,7 +77,8 @@ class AafigDirective(images.Image):
         aafig_options = dict()
         image_attrs = dict()
         own_options_keys = list(self.own_option_spec.keys()) + ['scale']
-        for (k, v) in self.options.items():
+        items = list(self.options.items())
+        for (k, v) in items:
             if k in own_options_keys:
                 # convert flags to booleans
                 if v is None:
